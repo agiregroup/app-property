@@ -1,48 +1,91 @@
-# app-property
+# 🏠 App Property – Interface de gestion immobilière en Vue 3
 
-This template should help get you started developing with Vue 3 in Vite.
+Application frontend développée avec Vue 3 et TypeScript. Elle permet de gérer des biens immobiliers (à louer ou à vendre) avec authentification, opérations CRUD, intégration de cartes, gestion d’état centralisée et tests end-to-end automatisés.
 
-## Recommended IDE Setup
+---
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## 🎯 Objectifs du projet
 
-## Recommended Browser Setup
+- Construire une application Vue 3 robuste avec l’API de Composition
+- Intégrer une API REST simulée via JSON Server
+- Gérer l’état global avec Pinia
+- Afficher les localisations sur carte avec Leaflet
+- Implémenter des tests end-to-end avec Playwright
+- (Bonus) Ajouter des mises à jour en temps réel via WebSocket ou SSE
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+---
 
-## Type Support for `.vue` Imports in TS
+## 🧰 Technologies utilisées
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+| Catégorie           | Technologie               |
+|---------------------|---------------------------|
+| Langage             | TypeScript                |
+| Framework           | Vue 3 (Composition API)   |
+| Gestion d’état      | Pinia                     |
+| Routage             | Vue Router 4              |
+| Requêtes API        | Axios                     |
+| UI / CSS            | TailwindCSS               |
+| Outil de build      | Vite                      |
+| API simulée         | JSON Server               |
+| Tests E2E           | Playwright                |
+| Cartographie        | Leaflet (via Vue-Leaflet) |
 
-## Customize configuration
+---
 
-See [Vite Configuration Reference](https://vite.dev/config/).
 
-## Project Setup
+### IDE
 
-```sh
+- [Visual Studio Code](https://code.visualstudio.com/)
+- Extension recommandée : [Vue Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+- ⚠️ Désactiver Vetur si installé
+
+### Navigateurs
+
+- Chrome, Edge, Brave (ou tout navigateur basé sur Chromium)
+- Extensions utiles :
+  - [Vue.js Devtools – Chrome](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
+  - [Vue.js Devtools – Firefox](https://addons.mozilla.org/fr/firefox/addon/vue-js-devtools/)
+
+---
+
+##  Support TypeScript pour les fichiers `.vue`
+
+TypeScript ne prend pas en charge nativement les types dans les fichiers `.vue`. Pour contourner cela :
+
+- Utilisation de `vue-tsc` pour la vérification des types au lieu de `tsc`
+- Extension Volar activée dans l’éditeur pour que le service TypeScript reconnaisse les types `.vue`
+
+---
+
+## Fonctionnalités
+
+- Authentification avec stockage du token
+- Liste des biens paginée, triable, filtrable
+- Détails d’un bien avec carte interactive
+- Formulaire d’ajout de bien
+- Notifications toast et indicateurs de chargement
+- (Bonus) Mises à jour en temps réel via SSE/WebSocket
+
+---
+
+## Installation et lancement du projet
+
+### 1. Installer les dépendances
+```bash
 npm install
+
 ```
+### 2. Lancer l’API simulée (JSON Server)
 
-### Compile and Hot-Reload for Development
+```bash
+npm run mock-api
 
-```sh
+```
+### 3. Démarrer le serveur de développement
+```bash
 npm run dev
+
 ```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+### 4. Lancer les tests end-to-end (Playwright)
+```bash
+npx playwright test
